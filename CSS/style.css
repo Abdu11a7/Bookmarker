@@ -1,0 +1,135 @@
+:root {
+  --main-color: #fec260;
+  --color-gradient: linear-gradient(to right, #3ca55c, #b5ac49);
+  --main-shadow: 0 0 0 0.25rem #fec26055;
+  --red-color: #eb1d36;
+  --red-color-darker: #d30820;
+  --green-color: #9eb23b;
+  --green-color-darker: #8a9e23;
+  --orange-color: #d1512d;
+  --orange-color-darker: #bb4120;
+  --main-transtion: all 0.4s;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: auto;
+  width: fit-content;
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+body {
+  background-color: #f7ecde;
+  font-family: "PT Sans Caption", sans-serif;
+  line-height: 1.5;
+}
+header h1 {
+  font-size: 50px;
+  font-family: "Pacifico", cursive;
+}
+header h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: var(--main-color);
+  z-index: -1;
+  transition: var(--main-transtion);
+}
+header h1:hover::after {
+  height: 70%;
+}
+main .container {
+  border-width: 2px 0 2px 0;
+  border-color: #000;
+  border-style: dotted;
+}
+main h3 {
+  font-family: "Righteous", cursive;
+  background-image: var(--color-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .form input {
+  border: 1px solid #ced4da;
+  outline: none;
+}
+main .form input:focus {
+  box-shadow: var(--main-shadow);
+  border-color: var(--main-color);
+}
+button {
+  border: none;
+  color: #fff;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  transition: var(--main-transtion);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin: auto;
+}
+main .form button {
+  background-color: var(--orange-color);
+  padding: 0.5rem 4rem;
+}
+main .form button:hover {
+  background-color: var(--orange-color-darker);
+}
+
+section#table table tbody .delete {
+  background-color: var(--red-color);
+}
+section#table table tbody .delete:hover {
+  background-color: var(--red-color-darker);
+}
+section#table table tbody .visit {
+  background-color: var(--green-color);
+}
+section#table table tbody .visit:hover {
+  background-color: var(--green-color-darker);
+}
+.message {
+  width: 35rem;
+  z-index: 99;
+  transition: var(--main-transtion);
+}
+.message .circles span {
+  display: inline-flex;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.message .circles span:first-child {
+  background-color: var(--red-color);
+}
+.message .circles span:nth-child(2) {
+  background-color: var(--main-color);
+}
+.message .circles span:last-child {
+  background-color: var(--green-color);
+}
+.message ul li i {
+  color: var(--red-color);
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  transition: var(--main-transtion);
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  .message {
+    width: 85%;
+  }
+}
